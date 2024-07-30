@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Delivery E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Flower Delivery</h1>
+        <div>
+            <button id="darkModeToggle">Toggle Dark Mode</button>
+            <button id="registerButton">Register</button>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li>Birthday</li>
+            <li>Anniversary</li>
+            <li>Others</li>
+        </ul>
+    </nav>
+
+    <section id="quote">
+        <p>Quote of the day: "Where flowers bloom so does hope." - Lady Bird Johnson</p>
+    </section>
+
+    <section id="flowers">
+    <h2>Flowers</h2>
+    <div class="flower-grid">
+        <div class="flower" data-name="Rose" data-price="199" data-category="birthday">
+            <img src="rose.jpg" alt="Rose">
+            <p>Rose - INR 199</p>
+        </div>
+        <div class="flower" data-name="Tulip" data-price="299" data-category="anniversary">
+            <img src="tulip.jpg" alt="Tulip">
+            <p>Tulip - INR 299</p>
+        </div>
+        <div class="flower" data-name="Lily" data-price="399" data-category="others">
+            <img src="lily.jpg" alt="Lily">
+            <p>Lily - INR 399</p>
+        </div>
+        <div class="flower" data-name="Sunflower" data-price="249" data-category="birthday">
+            <img src="sunflower.jpg" alt="Sunflower">
+            <p>Sunflower - INR 249</p>
+        </div>
+        <div class="flower" data-name="Daisy" data-price="199" data-category="anniversary">
+            <img src="daisy.jpg" alt="Daisy">
+            <p>Daisy - INR 199</p>
+        </div>
+        <div class="flower" data-name="Orchid" data-price="499" data-category="others">
+            <img src="orchid.jpg" alt="Orchid">
+            <p>Orchid - INR 499</p>
+        </div>
+        <div class="flower" data-name="Carnation" data-price="299" data-category="birthday">
+            <img src="carnation.jpg" alt="Carnation">
+            <p>Carnation - INR 299</p>
+        </div>
+        <div class="flower" data-name="Chrysanthemum" data-price="349" data-category="anniversary">
+            <img src="chrysanthemum.jpg" alt="Chrysanthemum">
+            <p>Chrysanthemum - INR 349</p>
+        </div>
+        <div class="flower" data-name="Peony" data-price="599" data-category="others">
+            <img src="peony.jpg" alt="Peony">
+            <p>Peony - INR 599</p>
+        </div>
+        <div class="flower" data-name="Hydrangea" data-price="499" data-category="birthday">
+            <img src="hydrangea.jpg" alt="Hydrangea">
+            <p>Hydrangea - INR 499</p>
+        </div>
+        <div class="flower" data-name="Iris" data-price="399" data-category="anniversary">
+            <img src="iris.jpg" alt="Iris">
+            <p>Iris - INR 399</p>
+        </div>
+        <div class="flower" data-name="Gardenia" data-price="699" data-category="others">
+            <img src="gardenia.jpg" alt="Gardenia">
+            <p>Gardenia - INR 699</p>
+        </div>
+        <div class="flower" data-name="Lavender" data-price="349" data-category="birthday">
+            <img src="lavender.jpg" alt="Lavender">
+            <p>Lavender - INR 349</p>
+        </div>
+        <div class="flower" data-name="Marigold" data-price="199" data-category="anniversary">
+            <img src="marigold.jpg" alt="Marigold">
+            <p>Marigold - INR 199</p>
+        </div>
+        <div class="flower" data-name="Poppy" data-price="249" data-category="others">
+            <img src="poppy.jpg" alt="Poppy">
+            <p>Poppy - INR 249</p>
+        </div>
+        <div class="flower" data-name="Rhododendron" data-price="499" data-category="birthday">
+            <img src="rhododendron.jpg" alt="Rhododendron">
+            <p>Rhododendron - INR 499</p>
+        </div>
+        <div class="flower" data-name="Snapdragon" data-price="299" data-category="anniversary">
+            <img src="snapdragon.jpg" alt="Snapdragon">
+            <p>Snapdragon - INR 299</p>
+        </div>
+        <div class="flower" data-name="Violet
+
+
+    <section id="details">
+        <h2>Flower Details</h2>
+        <p>Name: <span id="flowerName"></span></p>
+        <p>Price: INR <span id="flowerPrice"></span></p>
+        <p>Freshness: Super Fresh</p>
+        <p>Delivery Time: Same-day delivery</p>
+        <button onclick="addToCart()">Add to Cart</button>
+    </section>
+
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Flower</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="cartItems">
+                <!-- Cart items will be dynamically added here -->
+            </tbody>
+        </table>
+        <div class="total">Total: INR <span id="cartTotal"></span></div>
+        <button id="checkoutButton" onclick="checkout()">Checkout</button>
+    </section>
+
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <section id="registration">
+                <h2>Register</h2>
+                <form id="registrationForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="contact">Contact Number</label>
+                    <input type="text" id="contact" name="contact" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Flower Delivery E-commerce. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
